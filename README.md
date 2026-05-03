@@ -2,7 +2,7 @@
 
 Simulated and analyzed a 10,000-policy personal auto insurance portfolio to evaluate pricing adequacy, risk segmentation, and profitability. Built end-to-end: data generation in Python, analysis in PostgreSQL, and visualization in Excel.
 
-![Portfolio overview: 9.5% claim frequency · 0.68 loss ratio · $5676 avg premium](charts/dashboard_preview.png)
+![Portfolio overview: 9.5% claim frequency · 0.68 loss ratio · $5676 avg premium](dashboard_screenshot.png)
 
 ---
 
