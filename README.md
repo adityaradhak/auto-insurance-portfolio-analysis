@@ -2,35 +2,16 @@
 
 Simulated and analyzed a 10,000-policy personal auto insurance portfolio to evaluate pricing adequacy, risk segmentation, and profitability. Built end-to-end: data generation in Python, analysis in PostgreSQL, and visualization in Excel.
 
-![Portfolio overview: 9.5% claim frequency · 0.68 loss ratio · $5676 avg premium](dashboard_screenshot.png)
+![Portfolio overview: 9.5% claim frequency · 0.68 loss ratio · $568 avg premium](dashboard_screenshot.png)
 
 ---
 
 ## Tools
 | Layer | Tool |
 |-------|------|
-| Data generation | Python (Pandas, NumPy, SciPy) |
+| Data generation | Python (Pandas, NumPy) |
 | Data analysis | PostgreSQL |
 | Visualization | Excel |
-
----
-
-## Project structure
-
-```
-├── notebooks/
-│   └── generate_data.ipynb     # Policy and claims simulation
-├── sql/
-│   └── analysis.sql            # All queries, segmented by vehicle, age, season
-├── data/
-│   ├── policies.csv
-│   └── claims.csv
-├── output/
-│   └── aggregate_tables/       # 4 exported summary tables
-├── excel/
-│   └── actuarial_dashboard.xlsx
-└── README.md
-```
 
 ---
 
@@ -58,13 +39,13 @@ Claim occurrence modeled via Bernoulli draw using each policy's `claim_probabili
 
 Portfolio-level metrics plus segmented analysis answering five core underwriting questions:
 
-- Do sports cars produce more claims than sedans?
+- Do sports cars produce more claims overall?
 - Which vehicle type has the highest severity?
 - Do different age groups have different claim frequencies?
 - What time of year is most dangerous?
 - Does premium properly reflect risk by segment?
 
-Four aggregate tables exported to `output/aggregate_tables/`.
+Four aggregate tables exported to `Dashboard.xlsx`.
 
 ---
 
@@ -83,7 +64,7 @@ Charts include loss ratio by vehicle type, frequency by age band, and monthly cl
 ## Key findings
 
 **Pricing adequacy issues identified:**
-- Sports vehicles exhibited *lower*-than-expected loss ratios → potential overpricing
+- Sports vehicles exhibited *lower*-than-expected loss ratios due to conservative pricing assumptions → potential overpricing
 - Hybrid vehicles showed *elevated* loss ratios → potential underpricing
 
 **Risk segmentation:**
@@ -95,10 +76,3 @@ Charts include loss ratio by vehicle type, frequency by age band, and monthly cl
 ## Potential extensions
 - Incorporate state-level geographic rating factors
 - Segment analysis by `peril_type` (collision, comprehensive, liability)
-- Build a GLM to formalize the relationship between risk factors and claim frequency/severity
-
----
-
-## References
-- Klugman, Panjer & Willmot. *Loss Models: From Data to Decisions*, 4th ed.
-- SOA study materials — Exam STAM (loss distributions, frequency-severity models)
